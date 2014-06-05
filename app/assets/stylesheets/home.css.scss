@@ -1,0 +1,180 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  padding-top: 40px;
+}
+
+/**** Transitions ****/
+
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 01.0s;
+     -moz-transition-duration: 01.0s;
+       -o-transition-duration: 01.0s;
+          transition-duration: 01.0s;
+
+  /*-webkit-transition-timing-function: ease-in-out;*/
+  /*-moz-transition-timing-function: ease-in-out;*/
+  /*-o-transition-timing-function: ease-in-out;*/
+  /*-transition-timing-function: ease-in-out;*/
+
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+.tweet {
+    /*border: dotted 1px black;*/
+    /*width: 23%;*/
+    /*margin-bottom: 5px;*/
+  /*width: 200px;*/
+  margin-top: 10px;
+  margin-right: 5px;
+  float: left;
+  background: whiteSmoke;
+  border-radius: 15px;
+}
+
+.tweet_mention {
+  background: #ffffcc;
+}
+
+.tweet_mine {
+  background: #ffccff;
+}
+
+.tweet_text {
+  word-wrap: break-word;
+}
+
+/*div:first-letter {*/
+  /*font-weight: bold;*/
+  /*font-size: 1.3em;*/
+  /*font-family: Baskerville, “Palatino Linotype”, Times, serif;*/
+  /*color: #999999;*/
+  /*text-transform: capitalize;*/
+/*}*/
+
+.new_tweet {
+  font-weight: bold;
+}
+.tweet_time
+{
+    font-size: smaller;
+  font-style: italic;
+}
+
+.timestamp {
+  font-style: italic;
+  float:left;
+}
+
+.avatar_img {
+  float:left;
+  /*padding-right: 5px;*/
+  margin-right: 5px;
+  margin-bottom: 2px;
+  width: 32px;
+  height: 32px;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);
+  box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.tweet_img {
+  float:right;
+  margin-left: 5px;
+  /*padding-right: 5px;*/
+  margin-right: 5px;
+  margin-bottom: 2px;
+  width: 45px;
+  height: 45px;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);
+  box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.avatar_img_user {
+  /*padding-right: 5px;*/
+  margin-top: 3px;
+  /*margin-bottom: 5px;*/
+  width: 36px;
+  height: 36px;
+  /*-webkit-box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);*/
+  /*-moz-box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);*/
+  /*box-shadow: 2px 2px 5px 1px rgba(100, 100, 100, .8);*/
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.tweet-action
+{
+/*vertical-align: baseline;*/
+margin-bottom: -3px;
+/*margin-right: 3px;*/
+/*position: relative;*/
+}
+
+.topbar .ctl
+{
+  padding: 0;
+  display: inline;
+  line-height: 40px;
+}
+
+// character counter style
+
+.modal-body .counter{
+	/*position:absolute;*/
+	/*right:0;*/
+	/*bottom:0;*/
+  	padding-left: 10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#ccc;
+}
+.modal-body .warning{
+    color:#600;
+    font-size:22px;
+}
+.modal-body .exceeded{
+    color:#e00;
+    font-size:25px;
+}
+
+/* hide some things when on mobile                                      */
+@media all and (max-width: 800px){
+    .optional-narrow
+    {
+      display: none;
+    }
+}
+@media all and (max-width: 500px){
+    .optional-mobile
+    {
+      display: none;
+    }
+}

@@ -1,0 +1,71 @@
+<p></p><h4>About this site:</h4>
+
+  <img src="/images/sample-1.jpg" width="400" height="300" style="float:right;">
+
+  This site aims to provide a compact, fluid view of your Twitter timeline.
+  For example, make it full screen and it fills your screen with your tweets.
+  Make it a single column or row and the tweets flow as needed.
+
+  Images and videos are shown as inline thumbnails, which popup when clicked on.
+
+<!--<h5>NOTE - Still in BETA - could be down/changing at anytime :)</h5>-->
+
+<p>&nbsp;</p>
+
+This site is based on the following fantastic tools:
+<ul class="square add-bottom">
+  <li><a href="http://www.ruby-lang.org/en/">Ruby</a></li>
+  <li><a href="http://rubyonrails.org/">Rails</a></li>
+  <li><a href="http://github.com/documentcloud/backbone/">Backbone</a></li>
+  <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
+  <li><a href="http://masonry.desandro.com/">Masonry</a></li>
+  <li><a href="http://isotope.metafizzy.co/">Isotope</a></li>
+  <li><a href="https://github.com/jnunemaker/twitter">Twitter api gem</a></li>
+  <li><a href="http://momentjs.com/">Moment.js</a></li>
+  <li><a href="https://github.com/RobertWHurst/KeyboardJS">Keyboard.js</a></li>
+  <li><a href="https://github.com/hanklords/flickraw">flickraw</a></li>
+  <li><a href="https://github.com/philnash/bitly">Phil Nash's Ruby lib for the bit.ly api</a></li>
+  <li><a href="http://jacklmoore.com/colorbox/faq/">Colorbox for popup images/links</a></li>
+  <li><a href="http://www.appelsiini.net/projects/lazyload">Lazy load images via jQuery</a></li>
+  <li><a href="http://james.padolsey.com/javascript/special-scroll-events-for-jquery/">Detect scrollstop via jQuery</a></li>
+</ul>
+...and many more.
+
+Thanks to all of them, on the shoulders of giants etc.
+
+  <p>&nbsp;</p>
+<div class="span10 offset4">Also on Twitter <a href="https://twitter.com/intent/user?screen_name=hummingnow">@hummingnow</a>
+- say hi, make a suggestion or tell us whats wrong!
+</div>
+
+  <p>&nbsp;</p>
+<div class="span10 offset6">
+<b>Odd Stats</b>: Total users:<%= @total_users %><br>
+Today - joined: <%= @num_users_joined_today %>, signed in: <%= @num_users_signed_in_today %><br>
+Last hour - joined: <%= @num_users_joined_last_hour %>, signed in: <%= @num_users_signed_in_last_hour %><br>
+</div>
+
+<% if @user_list.present? %>
+Users: <%= @num_users %>, Authentications: <%= @num_auths %>
+<h5>Last 20 users joined</h5>
+<div class="span16">
+  <% @user_list.each do |u| %>
+    <a href="https://twitter.com/intent/user?screen_name=<%= u.nickname %>"><img src="<%= u.avatar_url %>" width="36px" height="36px" alt="<%= u.nickname %> @<%= u.created_at %>" title="<%= u.nickname %> @<%= u.created_at %>"></a>
+  <% end %>
+</div>
+<h5>Last 20 users signed in</h5>
+<div class="span16">
+  <% @user_today_list.each do |u| %>
+    <a href="https://twitter.com/intent/user?screen_name=<%= u.nickname %>"><img src="<%= u.avatar_url %>" width="36px" height="36px" alt="<%= u.nickname %> @<%= u.updated_at %>" title="<%= u.nickname %> @<%= u.updated_at %>"></a>
+  <% end %>
+</div>
+<% end %>
+
+<script type="text/javascript">
+  $(function(){
+     window.nickname ="<%= @nickname %>";
+
+     var update_view = new Walloftweets.Views.TwitterUpdateView();
+  });
+</script>
+

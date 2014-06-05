@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- google bug -->
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28368955-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>HummingNow</title>
+	<meta name="description" content="HummingNow provides a fluid, ticker tape style view of your twitter timeline. Tweets flow across the page as they come in">
+	<meta name="author" content="Chris Kimpton">
+    <meta name="copyright" content="January 2012">
+	<meta name="keywords" content="HummingNow, Twitter, Tweets, Fluid, Wall">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+         
+        <%= stylesheet_link_tag "application" %>
+        <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+  <script src="https://api.loggr.net/1/loggr.min.js?l=kimptoc&a=a63b37d7126840d8945f3d7f58ac51bf"></script>
+
+        <%= csrf_meta_tag %>
+</head>
+<body>
+
+<% if notice.present? %> <p class="alert-message info" id="app-notice"><%= notice %></p> <% end %>
+<% if alert.present? %><p class="alert-message warning" id="app-alert"><%= alert %></p><% end %>
+
+<div class="topbar">
+     <div class="fill">
+       <div class="container-fluid">
+         <a href="/about/<%= @nickname %>" class="pull-right optional-narrow"><img src="/images/icon-114.png" class="avatar_img_user"></a>
+         <% if user_signed_in? %>
+           <a href="/mine/<%= @nickname %>" class="pull-left optional-narrow"><img src="<%= @avatar_url %>" class="avatar_img_user"></a>
+         <% end %>
+         <ul class="nav">
+           <li class="<%= @topbar_home_active %>"><a href="/home/<%= @nickname %>" title="home">H</a></li>
+           <% if user_signed_in? %>
+           <li class="<%= @topbar_mentions_active %>"><a href="/mentions/<%= @nickname %>" title="mentions">@</a></li>
+           <li class="<%= @topbar_dm_active %>"><a href="/dm/<%= @nickname %>" title="direct messages">DM</a></li>
+           <li class="dropdown <%= @topbar_lists_active %>"><a href="#" class="dropdown-toggle" title="lists">L</a>
+             <ul class="dropdown-menu">
+               <% @lists.each do |list| %>
+               <li><a href="/list/<%= @nickname %>/<%= list['id_str'] %>" id="<%= list['id_str'] %>" class="twitter-list"><%= list['full_name'] %></a></li>
+               <% end if @lists.present? %>
+             </ul>
+           </li>
+           <% end %>
+           <li class="<%= @topbar_public_active %>"><span class="optional-mobile"><a href="/public/<%= @nickname %>" title="the public timeline">P</a></span></li>
+           <li>
+             <form action="/search/" class="pull-left optional-mobile">
+               <input type="hidden" name="nickname" value="<%= @nickname %>">
+               <input class="span3" type="text" name="query" id="query-field" placeholder="search Twitter" value="<%= @query %>">
+               <!--<button class="btn" type="submit">Search</button>-->
+             </form>
+           </li>
+           <li><p id="update-timestamp" class="optional-narrow"></p></li>
+           <li><span id="twitter-controls" class="optional-narrow"></span></li>
+         </ul>
+
+         <ul class="nav secondary-nav">
+           <% if user_signed_in? %>
+           <li>
+           <span class="optional-mobile">
+             <a href="#" id="status-update" title="status update">T</a>
+           </span>
+           </li>
+           <% end %>
+           <li class="dropdown <%= @topbar_mine_active %>">
+             <% if user_signed_in? %>
+               <a href="/mine" class="dropdown-toggle" title="accounts">A</a>
+                 <ul class="dropdown-menu">
+                   <% current_user.authentications.each do |acc| %>
+                    <li><%= link_to acc.nickname, :action => action_name, :nickname => acc.nickname %></li>
+                   <% end if current_user.authentications.present? %>
+                   <li><%= link_to "Add Account", authentications_path %></li>
+                   <li>
+                       <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                   </li>
+                 </ul>
+           </li>
+             <% else %>
+                 <li>
+               <%= link_to "Sign in", authentications_path %>
+                 </li>
+             <% end %>
+         </ul>
+       </div>
+     </div>
+</div>
+
+<div class="container-fluid">
+  <%= yield %>
+</div>
+
+<div style="float:right; font-size: smaller; color: #b0c4de;">&nbsp;<br> thumbnails courtesy of Artviper - <a href="http://www.artviper.net">SEO services</a></div>
+</body>
+</html>

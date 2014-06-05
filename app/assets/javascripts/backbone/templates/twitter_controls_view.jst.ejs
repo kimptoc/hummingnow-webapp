@@ -1,0 +1,8 @@
+&nbsp;
+<a href="#" class="ctl ctl_pause" title="click to pause auto load of new tweets"><span class="label success">pause</span></a>
+<a href="#" class="ctl ctl_play" title="click to auto load new tweets"><span class="label">play</span></a>
+<a href="#" class="ctl ctl_grid" title="click to arrange tweets in a grid"><span class="label warning">grid</span></a>
+<a href="#" class="ctl ctl_pack" title="click to pack tweets on the page"><span class="label notice">pack</span></a>
+<% if (models.length > 0) { %>
+<a href="#" class="ctl ctl_pending" title="click to display these pending tweets"><span class="label important"><%= models.length %> pending</span></a>
+<% } %>

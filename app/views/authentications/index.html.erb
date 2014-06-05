@@ -1,0 +1,36 @@
+<p></p>
+<p></p>
+<div class="container">
+
+  <img src="/images/sample-1.jpg" width="400" height="300" style="float:right;">
+
+<div>
+  <h3>HummingNow</h3>
+  This site aims to provide a compact, fluid view of your Twitter timeline.
+  For example, make it full screen and it fills your screen with your tweets.
+  Make it a single column or row and the tweets flow as needed.
+  <p>&nbsp;</p>
+  <% if current_user %>
+  To add another twitter account (<span class="label warning">Warning</span>dont log out of HummingNow),
+      <ul>
+        <li>click on the Twitter logo and</li>
+        <li>then <strong>ensure</strong> you are logged into the account you want to add. <em>You will probably need to log out of this Twitter account</em></li>
+        <li>then authorise it for <strong>HummingNow</strong></li>
+          </ul>
+  <% else %>
+  Sign in and take a look for yourself.
+  <% end %>
+  <p>&nbsp;</p>
+</div>
+
+
+  <div>
+
+<h4>Sign in via Twitter</h4>
+<a href="/auth/twitter" class="auth_provider">
+  <%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %></a>
+</div>
+
+</div>
+
+<div class="clear"></div>

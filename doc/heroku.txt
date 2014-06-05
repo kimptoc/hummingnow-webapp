@@ -1,0 +1,18 @@
+479  heroku destroy walloftweets
+
+  480  heroku create walloftweets --stack cedar
+
+  486  git push heroku master
+
+  487  heroku logs
+
+  497  heroku help
+
+  498  heroku help db
+
+  499  heroku run rake db:rollback
+  499  heroku run rake db:migrate
+
+  507  git push heroku
+
+heroku maintenance # toggle it

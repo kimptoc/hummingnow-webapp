@@ -1,0 +1,8 @@
+  {"lists"=>
+    [{"name"=>"Local Restaurants",
+      "created_at"=>"Sat Jul 16 22:57:51 +0000 2011",
+      "full_name"=>"@kimptoc/local-restaurants",
+      "description"=>"",
+      "mode"=>"public",
+      "id" ->
+      "user"=>

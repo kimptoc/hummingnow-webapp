@@ -1,0 +1,14 @@
+
+<div id="twitter-status"><br>This site requires Javascript to be enabled in order for it to work</div>
+
+<script type="text/javascript">
+  $(function(){
+      window.nickname ="<%= @nickname %>";
+
+//     Loggr.Log.events.createEvent().text(window.location.href).post();
+//     Loggr.Log.trackUser(window.nickname,window.nickname );
+
+     window.wall_app_router = new Walloftweets.Routers.WallRouter(<%== wall_options %>, <%== @user_settings.to_json %>);
+  });
+</script>
+

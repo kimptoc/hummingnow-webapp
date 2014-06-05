@@ -1,0 +1,26 @@
+<% for (var i = 0; i < models.length; i++) { %>
+<div class="tweet <%= tweet_colour_class(window.nickname,models[i].screen_name,models[i].text) %>">
+  <a href="/user/<%= models[i].screen_name %>/<%= window.nickname %>" title="<%= models[i].name %>">
+    <img class="avatar_img" src="<%= models[i].profile_image_url %>"><%= models[i].screen_name %></a>
+  <div class="tweet_text new_tweet_text new_tweet"><%= models[i].text %></div>
+  <% m_tweet = moment(makeDate(models[i].created_at)); %>
+  <div class="tweet_time" tweet_ts="<%= models[i].created_at %>" tweet_id="<%= models[i].id_str %>">
+    &nbsp;
+    <a href="https://twitter.com/<%= models[i].screen_name %>/status/<%= models[i].id_str %>">
+      <span class="tweet_from_now" title="<%= m_tweet.format("HH:mm:ss") %>"><%= m_tweet.fromNow() %></span></a>
+    <% if (!dm_mode && window.nickname) { %>
+      <span class="optional-mobile">
+      <a href="#" class="reply-action" tweet_id="<%= models[i].id_str %>" tweet_user="<%= models[i].screen_name %>">
+        <img title="reply" class="reply-img tweet-action" src="/images/twitter/reply.png"></a>
+        <a href="#" class="retweet-action" tweet_id="<%= models[i].id_str %>" tweet_text="@<%= models[i].screen_name %> <%= htmlEntities(models[i].text) %>">
+        <% if (models[i].retweeted != undefined && models[i].retweeted == false) { %>
+          <img class="tweet-action" src="/images/twitter/retweet.png" title="retweet">
+        <% } else { %>
+          <img class="tweet-action" src="/images/twitter/retweet_on.png" title="retweeted!">
+        <% }; %>
+        </a>
+        </span>
+    <% }; %>
+  </div>
+</div>
+<% }; %>
