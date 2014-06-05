@@ -12,6 +12,8 @@ rake figaro:heroku\[hummingnow-dev\]
 --TODO
 ================
 
+configure git remote repos / setup heroku to accept them
+
 user_settings post is failing - rails 4/route issue?
 
 how to proxy twitter gem requests so that charles can spy on them
