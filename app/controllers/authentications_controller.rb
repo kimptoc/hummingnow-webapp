@@ -38,7 +38,7 @@ class AuthenticationsController < ApplicationController
       redirect_to :controller => :home, :action => :index, :nickname => authentication.nickname
     else
       # user = User.find_or_create_by_email(:email => omniauth['info']['nickname'])
-      user = User.first_or_create_by(:email => omniauth['info']['nickname'])
+      user = User.first_or_create(:email => omniauth['info']['nickname'])
       authentication = user.apply_omniauth(omniauth)
       Rails.logger.debug "New user:#{authentication.nickname}"
       user.remember_me = true
