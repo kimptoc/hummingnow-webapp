@@ -1,6 +1,4 @@
-================
---INFO
-================
+# INFO
 
 http://loggr.net/logs/kimptoc
 
@@ -8,9 +6,7 @@ to push env vars to heroku
 
 rake figaro:heroku\[hummingnow-dev\]
 
-================
---TODO
-================
+# TODO
 
 Attr accessible related tweaks needed:
 WARNING: Can't mass-assign protected attributes for UserSetting: key, value
@@ -44,9 +40,7 @@ Probably better via oembed / javascript - https://github.com/starfishmod/jquery-
 RT's entities are inside the RT message, need to dig into that...
 
 
-================
-=== bugs
-================
+# bugs
 
 - https://github.com/ddollar/heroku-autoscale/network
 
@@ -149,9 +143,7 @@ Eg https://twitter.com/#!/SnoopDogg/status/155184870862237696
 - intermittent error on login
 - when switching accounts, get heroku crash error
 
-================
-=== ideas ===
-================
+# ideas
 
 - try wookmark??
 
@@ -217,9 +209,7 @@ Eg https://twitter.com/#!/SnoopDogg/status/155184870862237696
 -- done pending check
 - own/custom favicon
 
-================
-=== todo
-================
+# todo
 
 - Show reviews (via rss feed) on about page
 
@@ -370,9 +360,7 @@ https://dev.twitter.com/docs/rate-limiting
 --How to switch style? Custom/override classes
 
 
-================
--- fixed bugs...
-================
+# fixed bugs...
 
 - IE, errors NaN with time formatting of main tweet time...
 - getting same tweet repeated sometimes, maybe if 0 or 1 new tweet.
@@ -381,9 +369,8 @@ https://dev.twitter.com/docs/rate-limiting
 - show links in a popup frame, ala lightbox - NO - breaks no iframe rules for some sites
 
 
-================
-CSS
-================
+# CSS
+
 https://github.com/LeaVerou/CSS3-Patterns-Gallery
 http://leaverou.github.com/animatable/
 http://leaverou.github.com/prefixfree/
@@ -392,21 +379,18 @@ http://coding.smashingmagazine.com/2011/02/11/the-bright-near-future-of-css/
 http://css-tricks.com/
 http://www.maclife.com/article/howtos/how_make_web_animations_using_hype#slide-0
 
-================
-Jasmine Links
-================
+# Jasmine Links
+
 - https://github.com/velesin/jasmine-jquery
 - http://asciicasts.com/episodes/261-testing-javascript-with-jasmine
 
-================
-Backbone links
-================
+# Backbone links
+
 - https://github.com/documentcloud/backbone/wiki/Tutorials%2C-blog-posts-and-example-sites
 
 
-=============
-= iPad app things
-=============
+# iPad app things
+
 
 ipad app release- to do:
 
@@ -430,9 +414,8 @@ ipad todo later
 
 
 
-================
-iOS
-================
+# iOS
+
 - http://stackoverflow.com/questions/2909807/does-uigesturerecognizer-work-on-a-uiwebview
 - http://stackoverflow.com/questions/6377493/gesture-recognition-with-uiwebview
 - http://codingandcoffee.wordpress.com/2011/10/19/iphone-tutorial-three-simple-gesture-recognizer-and-storyboard/
