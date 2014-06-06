@@ -8,10 +8,6 @@ rake figaro:heroku\[hummingnow-dev\]
 
 # TODO
 
-Attr accessible related tweaks needed:
-WARNING: Can't mass-assign protected attributes for UserSetting: key, value
-WARNING: Can't mass-assign protected attributes for Authentication: provider, uid, token, secret, nickname, name, avatar_url
-
 
 user_settings post is failing - rails 4/route issue?
 

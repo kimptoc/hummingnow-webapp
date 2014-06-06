@@ -1,5 +1,5 @@
 class Walloftweets.Models.Setting extends Backbone.Model
-  urlRoot: 'user_settings'
+  urlRoot: '/user_settings'
 
 
 class Walloftweets.Collections.SettingsCollection extends Backbone.Collection
