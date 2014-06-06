@@ -9,3 +9,5 @@ TWITTER_CONSUMER_KEY: Get from Twitter
 TWITTER_CONSUMER_SECRET: Get from Twitter
 TWITTER_OAUTH_TOKEN: Get from Twitter
 TWITTER_OAUTH_TOKEN_SECRET: Get from Twitter
+
+ARTVIPER_UID: Get from Art Viper

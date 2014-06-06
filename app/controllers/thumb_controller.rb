@@ -10,7 +10,7 @@ class ThumbController < ApplicationController
     response.headers['Content-Type'] = 'image/jpeg'
     response.headers['Content-Disposition'] = 'inline'
 
-    artviper_url = "http://www.website-screenshots.de/artviperx.php?uID=64945b3ebd273094&url=#{page_url}"
+    artviper_url = "http://www.website-screenshots.de/artviperx.php?uID=#{Figaro.env.artviper_uid}&url=#{page_url}"
 
     Rails.logger.info "artviper url: #{artviper_url}"
 
