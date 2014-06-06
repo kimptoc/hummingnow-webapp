@@ -1,0 +1,11 @@
+# Add application configuration variables here, as shown below.
+#
+# You need a Twitter app key to run this app - https://apps.twitter.com/app/new
+# Then add the various keys here
+#
+# Also rename/copy this file and remove the .template suffix
+
+TWITTER_CONSUMER_KEY: Get from Twitter
+TWITTER_CONSUMER_SECRET: Get from Twitter
+TWITTER_OAUTH_TOKEN: Get from Twitter
+TWITTER_OAUTH_TOKEN_SECRET: Get from Twitter
