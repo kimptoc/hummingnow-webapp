@@ -103,5 +103,3 @@ gem 'rails_12factor', group: :production
 
 gem 'figaro'
 
-# git lib
-gem 'rugged'

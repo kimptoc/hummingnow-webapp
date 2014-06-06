@@ -11,11 +11,6 @@ rake figaro:heroku\[hummingnow-dev\]
 Show git version/ruby/rails (and other gem) versions on about/admin page?
 
 
-how to proxy twitter gem requests so that charles can spy on them
-
-
-Don't cache avatar urls - otherwise dont pickup changes
-
 
 Thumbnails - currently not getting any via http://www.artviper.net/website-tools/website-thumbnails.php
 
@@ -28,6 +23,12 @@ https://github.com/judofyr/ruby-oembed
 https://github.com/netshade/oembed_links
 
 Probably better via oembed / javascript - https://github.com/starfishmod/jquery-oembed-all
+
+
+how to proxy twitter gem requests so that charles can spy on them
+
+
+Don't cache avatar urls - otherwise dont pickup changes
 
 
 - search fails :( ( phoenix_search ?? )
