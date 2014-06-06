@@ -8,14 +8,14 @@
 
   Images and videos are shown as inline thumbnails, which popup when clicked on.
 
-Hummingnow.com - version: <a href='https://github.com/kimptoc/hummingnow-webapp/commit/<%= `git rev-parse HEAD` %>'><%= `git rev-parse HEAD`[0..9] %></a> @<%= `git log -1 --format="%cd"` %>
+Hummingnow.com - version: <a href='https://github.com/kimptoc/hummingnow-webapp/commit/<%= Rugged::Repository.new('.').head.target %>'><%= Rugged::Repository.new('.').head.target[0..9] %></a> @<%= Rugged::Repository.new('.').last_commit.time %>
 <!--<h5>NOTE - Still in BETA - could be down/changing at anytime :)</h5>-->
 
 <p>&nbsp;</p>
 
 This site is based on the following fantastic tools:
 <ul class="square add-bottom">
-  <li><a href="http://www.ruby-lang.org/en/">Ruby</a> version:<%= ENV['RUBY_VERSION'] %></li>
+  <li><a href="http://www.ruby-lang.org/en/">Ruby</a> v<%= RbConfig::CONFIG['RUBY_PROGRAM_VERSION'] %></li>
   <li><a href="http://rubyonrails.org/">Rails</a> v<%= Rails.version %></li>
   <li><a href="http://github.com/documentcloud/backbone/">Backbone</a></li>
   <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
