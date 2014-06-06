@@ -22,37 +22,22 @@ Show ruby/rails (and other gem) versions on about/admin page?
 Don't cache avatar urls - otherwise dont pickup changes
 
 
+Thumbnails - currently not getting any via http://www.artviper.net/website-tools/website-thumbnails.php
 
-Ideas
+Thumbnail Ideas
 - http://oembed.com/ - url embedding facility
 - or http://embed.ly/
+http://rumproarious.com/2010/05/12/ruby-oembed-and-embedly-all-that-was-needed-was-a-little-love/
+https://github.com/soulim/oembed
+https://github.com/judofyr/ruby-oembed
+https://github.com/netshade/oembed_links
 
+Probably better via oembed / javascript - https://github.com/starfishmod/jquery-oembed-all
 
-Rails 3.2.11 upgrade
-- big bang failed, trying bit by bit, patching current rails
 
 - search fails :( ( phoenix_search ?? )
 RT's entities are inside the RT message, need to dig into that...
 
-ipad app release- to do:
-
-- http://itunes.apple.com/gb/app/humming-now/id491994653?mt=8
-
-- ipad/seems to crash alot - ad issues? Disabled GS and Mill for now, seems better...
-
-- ads - http://www.neilinglis.com/2010/07/20/using-adwhirl-to-achieve-high-fill-rates/
--- https://www.adwhirl.com/apps/apps
--- mobclix - linked to inmobi?
-
-ipad todo later
-- screenshots- with (ios/back) menu open
-- loading html needs to be better , spinner thing
-- check each configured ad network, make sure its all setup payment wise
-- on ios show busy status when opening link
-- option to go to home screen
-- option to inapp purchase, no ads (iCloud store app purchase info)
-- icon for final domain name/mar?
-- iOS press and hold link, option to open in safari
 
 ================
 === bugs
@@ -412,6 +397,33 @@ Jasmine Links
 Backbone links
 ================
 - https://github.com/documentcloud/backbone/wiki/Tutorials%2C-blog-posts-and-example-sites
+
+
+=============
+= iPad app things
+=============
+
+ipad app release- to do:
+
+- http://itunes.apple.com/gb/app/humming-now/id491994653?mt=8
+
+- ipad/seems to crash alot - ad issues? Disabled GS and Mill for now, seems better...
+
+- ads - http://www.neilinglis.com/2010/07/20/using-adwhirl-to-achieve-high-fill-rates/
+-- https://www.adwhirl.com/apps/apps
+-- mobclix - linked to inmobi?
+
+ipad todo later
+- screenshots- with (ios/back) menu open
+- loading html needs to be better , spinner thing
+- check each configured ad network, make sure its all setup payment wise
+- on ios show busy status when opening link
+- option to go to home screen
+- option to inapp purchase, no ads (iCloud store app purchase info)
+- icon for final domain name/mar?
+- iOS press and hold link, option to open in safari
+
+
 
 ================
 iOS
