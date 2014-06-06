@@ -8,12 +8,10 @@ rake figaro:heroku\[hummingnow-dev\]
 
 # TODO
 
+Show git version/ruby/rails (and other gem) versions on about/admin page?
 
-user_settings post is failing - rails 4/route issue?
 
 how to proxy twitter gem requests so that charles can spy on them
-
-Show ruby/rails (and other gem) versions on about/admin page?
 
 
 Don't cache avatar urls - otherwise dont pickup changes
