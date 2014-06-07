@@ -8,9 +8,6 @@ rake figaro:heroku\[hummingnow-dev\]
 
 # TODO
 
-Show git version/ruby/rails (and other gem) versions on about/admin page?
-
-
 
 Thumbnails - currently not getting any via http://www.artviper.net/website-tools/website-thumbnails.php
 
@@ -29,6 +26,11 @@ how to proxy twitter gem requests so that charles can spy on them
 
 
 Don't cache avatar urls - otherwise dont pickup changes
+
+
+Show own github version version on about/admin page?
+http://stackoverflow.com/questions/10973341/heroku-console-show-the-latest-sha-hash-from-git-deployment
+https://github.com/heroku/heroku.rb
 
 
 - search fails :( ( phoenix_search ?? )
