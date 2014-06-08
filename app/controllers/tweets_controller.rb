@@ -97,7 +97,8 @@ class TweetsController < ApplicationController
 
   def phoenix_search
     query = params[:query]
-    twitter_wrapper { |opts| get_twitter.search(query, opts) }
+    twitter_wrapper { |opts| opts[:result_type] = 'mixed'; puts opts.inspect; get_twitter.search(query, opts) }
+    # twitter_wrapper { |opts| opts[:result_type] = 'popular'; puts opts.inspect; get_twitter.search(query, opts) }
   end
 
   def bitly_expansions(bitly, url_expansion_queue, url_expansions)

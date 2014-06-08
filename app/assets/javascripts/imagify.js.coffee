@@ -10,7 +10,7 @@ window.imagify = (string, text) ->
 #//    console.log(String(string))
   is_image = /\.(png|jpg|jpeg|gif)/i
 #//    http://api.instagram.com/oembed?url=http://instagr.am/p/BUG/
-  is_instagram = /^http:\/\/instagr\.am/
+  is_instagram = /^http:\/\/instagr\.?am/
   is_flickr = /^http:\/\/flic\.kr/
   is_youtube = /^http:\/\/.*youtu/
 

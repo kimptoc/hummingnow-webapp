@@ -54,7 +54,12 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
 #    console?.log "counter2:",@counter2,@settings.is_true("auto_mode"), show_pending
     if @settings.is_true("auto_mode") or show_pending
       @counter2 += 1
-      @showSomeTweets() if @counter2 == @time_between_tweets_on_page or @first_pass or show_pending
+      if @counter2 == @time_between_tweets_on_page or @first_pass or show_pending
+        @showSomeTweets() 
+        # $("a.oembed").oembed('',embedMethod: 'fill', includeHandle: false, tagClass: 'tweet_img', includeRichMedia: false, includeGeneric: false)
+        # $("a.oembed").oembed('',embedMethod: 'fill', includeHandle: false, img_class: 'tweet_img', maxWidth: 20, maxHeight: 20)
+        # $("a.oembed").oembed()
+        # $("a.oembed").removeClass('oembed')
       @settings.set("show_pending",false) if show_pending
 #      console.log "added tweets",some_tweets
 #      console.log("displaying tweet #{a_tweet.get("id_str")}/#{- makeDate(a_tweet.get("created_at")).getTime()}")
