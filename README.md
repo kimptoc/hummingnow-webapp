@@ -10,7 +10,7 @@ rake figaro:heroku\[hummingnow-dev\]
 
 RT's entities are inside the RT message, need to dig into that...
 
-do proper vimeo embed, like youtube
+do proper vimeo embed, like youtube, getting thumbnail, but ideally want iframe to work too
 
 search returns too many, do a 'take' on the results to limit it
 
