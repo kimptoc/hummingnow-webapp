@@ -65,13 +65,16 @@ class ThumbController < ApplicationController
 
   def try_url(url)
     thumbnail_url = url
+    tries = 1
     begin
         response_code = ""
-        while response_code != "200"
+        while response_code != "200" && tries < 6
             response_code = check_url_header(thumbnail_url)
+            tries += 1
             raise "Error" if response_code == "500"
             sleep 10 unless response_code == "200"
         end
+        raise "Error" if response_code != "200"
     rescue Exception => ex
       thumbnail_url = ""
     end
