@@ -13,6 +13,7 @@ window.imagify = (string, text) ->
   is_instagram = /^http:\/\/instagr\.?am/
   is_flickr = /^http:\/\/flic\.kr/
   is_youtube = /^http:\/\/.*youtu/
+  is_vimeo = /^https?:\/\/vimeo/
 
   pending_image = "/images/image_pending.png"
 
@@ -31,6 +32,10 @@ window.imagify = (string, text) ->
 #//        tester="http://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg";
     return "<a href=\""+string+"\">"+strTruncate(string,25)+"</a>"
 #//        return "<a href=\""+string+"\" class=\"tweet_img_iframe\"><img data-original=\""+string+"\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>";
+
+  if is_vimeo.test(string)==true
+      string = string.replace(/\/m\//,'/')
+      return "<a href=\""+string+"\" class=\"tweet_img_iframe oembed\">"+strTruncate(string,25)+"</a>"
 
   if is_youtube.test(string)==true
     embed_url = mapToYoutubeEmbedUrl(string)

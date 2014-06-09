@@ -97,7 +97,7 @@ class TweetsController < ApplicationController
 
   def phoenix_search
     query = params[:query]
-    twitter_wrapper { |opts| opts[:result_type] = 'mixed'; puts opts.inspect; get_twitter.search(query, opts) }
+    twitter_wrapper { |opts| opts[:result_type] = 'mixed'; Rails.logger.debug opts.inspect; get_twitter.search(query, opts) }
     # twitter_wrapper { |opts| opts[:result_type] = 'popular'; puts opts.inspect; get_twitter.search(query, opts) }
   end
 
@@ -219,7 +219,7 @@ class TweetsController < ApplicationController
     expand_bitly_urls(tweets, url_expansions)
     expand_flickr_urls(url_expansions)
 
-    tweets.each do |tw|
+    tweets.take(200).each do |tw|
       #Rails.logger.debug "#{tw.id} ? #{twitter_opts[:since_id]}"
       if twitter_opts[:since_id].nil? or tw.id != twitter_opts[:since_id]
         tweet_hash = {}

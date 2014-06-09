@@ -98,7 +98,7 @@ class ThumbController < ApplicationController
             path_query = "#{uri.path}?#{uri.query}"
             Rails.logger.info "path/query:#{path_query}"
             response = http.head(path_query)
-            Rails.logger.info "[#{this_check_id}]Response code:#{response.code}"
+            Rails.logger.info "[#{this_check_id}]Response code:#{response.code}/#{response.message}"
             response_code = response.code
             response.each do |k, v| 
                 Rails.logger.info "[#{this_check_id}]#{k}: #{v}" 

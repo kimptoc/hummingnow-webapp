@@ -303,6 +303,8 @@
                     case "rich":
                       if (settings.includeRichMedia) {
                         oembedData.code = $.fn.oembed.getRichCode(externalUrl, oembedData);
+                      } else {
+                        oembedData.code = $.fn.oembed.getPhotoCode(externalUrl, oembedData);
                       }
                         break;
                     default:
@@ -396,7 +398,7 @@
         } else {
             code = '<div>Error loading this picture</div>';
         }
-        if (oembedData.html) code += "<div>" + oembedData.html + "</div>";
+//        if (oembedData.html) code += "<div>" + oembedData.html + "</div>";
         return code;
     };
 
