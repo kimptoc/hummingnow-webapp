@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
 
     result = current_user.twitter(@nickname).update(msg, options)
 
-    puts result
+    Rails.logger.info result
 
     response = {:tweet_status => "ok"}
 
@@ -38,7 +38,7 @@ class TweetsController < ApplicationController
 
     result = current_user.twitter(@nickname).retweet(original_tweet_id)
 
-    puts result
+    Rails.logger.info result
 
     response = {:tweet_status => "ok"}
 

@@ -20,12 +20,23 @@ class ActiveSupport::Logger::SimpleFormatter
     "%s:%s:%s>%s\n" % [      time.strftime("%Y%m%d %H:%M:%S.%L") ,
                               level,
                               threadName,
-                                   msg]
+                                   msg2str(msg)]
 
     #"[#{severity}] #{msg}\n"
   end
 end
 
+def msg2str(msg)
+  case msg
+  when ::String
+    msg
+  when ::Exception
+    "#{ msg.message } (#{ msg.class })\n" <<
+      (msg.backtrace || []).join("\n")
+  else
+    msg.inspect
+  end
+end
 
 # module ActiveSupport
 #   class BufferedLogger
