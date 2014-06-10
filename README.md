@@ -8,6 +8,14 @@ rake figaro:heroku\[hummingnow-dev\]
 
 # TODO
 
+failing to find t.co link in this tweet, ruby issue?
+https://twitter.com/Truetalkuk/status/476276668131450880
+
+use oembed more
+https://github.com/starfishmod/jquery-oembed-all
+
+zoom small image on mouse over
+
 RT's entities are inside the RT message, need to dig into that...
 
 do proper vimeo embed, like youtube, getting thumbnail, but ideally want iframe to work too
