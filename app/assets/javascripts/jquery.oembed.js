@@ -840,11 +840,11 @@
               if(results['og:image:height']) img.attr('height',results['og:image:height']);
               code.append(img);
             }
-            if(results['og:title']) code.append('<b>'+results['og:title']+'</b><br/>');
-            if(results['og:description'])
-             code.append(results['og:description']+'<br/>');
-            else if(results['description'])
-              code.append(results['description']+'<br/>');
+//            if(results['og:title']) code.append('<b>'+results['og:title']+'</b><br/>');
+//            if(results['og:description'])
+//             code.append(results['og:description']+'<br/>');
+//            else if(results['description'])
+//              code.append(results['description']+'<br/>');
             return code;
           }
         }

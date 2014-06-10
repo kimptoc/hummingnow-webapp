@@ -8,36 +8,35 @@ window.imagify = (string, text) ->
 #//    console.log(string);
 #//"<a href=\"$&\">"+imagify("$&")+"</a>"
 #//    console.log(String(string))
-  is_image = /\.(png|jpg|jpeg|gif)/i
-#//    http://api.instagram.com/oembed?url=http://instagr.am/p/BUG/
-  is_instagram = /^http:\/\/instagr\.?am/
-  is_flickr = /^http:\/\/flic\.kr/
-  is_youtube = /^http:\/\/.*youtu/
-  is_vimeo = /^https?:\/\/vimeo/
+
+  #//    http://api.instagram.com/oembed?url=http://instagr.am/p/BUG/
 
   pending_image = "/images/image_pending.png"
 
-  if is_image.test(string)==true
+  if /\.(png|jpg|jpeg|gif)/i.test(string)==true
     return "<a href=\""+string+"\" class=\"tweet_img_a\" title=\""+htmlEntities(text)+"\"><img data-original=\""+string+"\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
 
-  if is_instagram.test(string)==true
+  if /^http:\/\/instagr\.?am/.test(string)==true
 #//        string = "http://api.instagram.com/oembed?url="+string;
     thumb_img = "#{string}media/?size=t"
 #//        var medium_img = string +"media/";
 #//        return "<a href=\""+medium_img+"\" class=\"tweet_img_iframe\" title=\""+htmlEntities(text)+"\"><img src=\""+thumb_img+"\" class=\"tweet_img\"></a>";
     return "<a href=\""+string+"\" class=\"tweet_img_iframe\"><img data-original=\""+thumb_img+"\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
 
-  if is_flickr.test(string)==true
+  if /^http:\/\/flic\.kr/.test(string)==true
 #//        console.log("flickr:"+string);
 #//        tester="http://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg";
     return "<a href=\""+string+"\">"+strTruncate(string,25)+"</a>"
 #//        return "<a href=\""+string+"\" class=\"tweet_img_iframe\"><img data-original=\""+string+"\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>";
 
-  if is_vimeo.test(string)==true
+  if /^https?:\/\/vimeo/.test(string)==true
       string = string.replace(/\/m\//,'/')
       return "<a href=\""+string+"\" class=\"tweet_img_iframe oembed\">"+strTruncate(string,25)+"</a>"
 
-  if is_youtube.test(string)==true
+  if /^https?:\/\/.*pinterest/.test(string)==true
+      return "<a href=\""+string+"\" class=\"tweet_img_iframe oembed\">"+strTruncate(string,25)+"</a>"
+
+  if /^http:\/\/.*youtu/.test(string)==true
     embed_url = mapToYoutubeEmbedUrl(string)
     thumb_url = mapToYoutubeThumbUrl(string)
 #//        return "<a href=\""+embed_url+"\" class=\"link_youtube\">"+strTruncate(string,25)+"</a>";
@@ -67,5 +66,5 @@ window.imagify = (string, text) ->
 
   console.log("Trying to gen thumbnail for:#{string}")
 
-  return "<a href=\"#{string}\" class=\"tweet_img_iframe\" title=\"#{htmlEntities(text)}\"><img data-original=\"http://hummingnow-thumbs#{thumb_server}.herokuapp.com/thumb/#{encodeURIComponent(string)}\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
-  # return "<a href=\"#{string}\" class=\"tweet_img_iframe\" title=\"#{htmlEntities(text)}\"><img data-original=\"http://localhost:3000/thumb/#{encodeURIComponent(string)}\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
+  # return "<a href=\"#{string}\" class=\"tweet_img_iframe\" title=\"#{htmlEntities(text)}\"><img data-original=\"http://hummingnow-thumbs#{thumb_server}.herokuapp.com/thumb/#{encodeURIComponent(string)}\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
+  return "<a href=\"#{string}\" class=\"tweet_img_iframe\" title=\"#{htmlEntities(text)}\"><img data-original=\"http://localhost:3000/thumb/#{encodeURIComponent(string)}\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"

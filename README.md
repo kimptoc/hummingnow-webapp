@@ -12,34 +12,10 @@ RT's entities are inside the RT message, need to dig into that...
 
 do proper vimeo embed, like youtube, getting thumbnail, but ideally want iframe to work too
 
-search returns too many, do a 'take' on the results to limit it
+### Thumbnails
 
-thumbnails - if none found/error, show different image
-thumbnails - check thumbalizr status code, to see if we need to try again
-thumbnails - or do custom solution via phantomjs or similar
 thumbnails - use several services randomly to get more working
-
-oembed tweaks, submit patches
-- optional rich media (as cannot resize)
-- custom image class setting
-
--- option to limit oembed text or make it tooltip instead of inline
--- some oembed cases still give big image
--- better handle oembed produced html - nests it inside a href, perhaps replace it.
--- better handle missing image, show pending or not found or remove
--- opengraph video becomes text/image - no link
-
-Thumbnails - currently not getting any via http://www.artviper.net/website-tools/website-thumbnails.php
-
-Thumbnail Ideas
-- http://oembed.com/ - url embedding facility
-- or http://embed.ly/
-http://rumproarious.com/2010/05/12/ruby-oembed-and-embedly-all-that-was-needed-was-a-little-love/
-https://github.com/soulim/oembed
-https://github.com/judofyr/ruby-oembed
-https://github.com/netshade/oembed_links
-
-Probably better via oembed / javascript - https://github.com/starfishmod/jquery-oembed-all
+use oembed where it can handle things
 
 Artviper alts:
 - http://www.webresourcesdepot.com/10-free-website-thumbnail-generation-services/
@@ -48,7 +24,6 @@ Artviper alts:
 - http://www.websnapr.com/
 - http://www.page2images.com/
 
-log formatting under rails 4 - broken again
 
 how to proxy twitter gem requests so that charles can spy on them
 
