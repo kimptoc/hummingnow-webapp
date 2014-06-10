@@ -88,8 +88,8 @@ class ThumbController < ApplicationController
     Rails.logger.info "[#{this_check_id}]Checking url start:#{url}"
     uri = URI(url)
     response_code = ""
-    # proxy_addr = 'localhost'
-    # proxy_port = 8888
+    #proxy_addr = 'localhost'
+    #proxy_port = 8888
     proxy_addr = nil
     proxy_port = nil
     Net::HTTP.start(uri.host, uri.port, proxy_addr, proxy_port, 

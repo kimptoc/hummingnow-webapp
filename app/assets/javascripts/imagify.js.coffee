@@ -65,5 +65,7 @@ window.imagify = (string, text) ->
   window.imagify_website_count += 1
   thumb_server = 1 + (window.imagify_website_count % 2)
 
+  console.log("Trying to gen thumbnail for:#{string}")
+
   return "<a href=\"#{string}\" class=\"tweet_img_iframe\" title=\"#{htmlEntities(text)}\"><img data-original=\"http://hummingnow-thumbs#{thumb_server}.herokuapp.com/thumb/#{encodeURIComponent(string)}\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
   # return "<a href=\"#{string}\" class=\"tweet_img_iframe\" title=\"#{htmlEntities(text)}\"><img data-original=\"http://localhost:3000/thumb/#{encodeURIComponent(string)}\" src=\"#{pending_image}\" class=\"img_lazy tweet_img\"></a>"
