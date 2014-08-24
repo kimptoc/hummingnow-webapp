@@ -99,7 +99,7 @@ gem 'base58'
 gem 'rails4_upgrade'
 
 # for heroku
-gem 'rails_12factor', group: :production
+#gem 'rails_12factor', group: :production
 
 gem 'figaro'
 
