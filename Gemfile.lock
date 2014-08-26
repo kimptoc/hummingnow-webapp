@@ -125,6 +125,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     naught (1.0.0)
+    newrelic_rpm (3.9.3.241)
     oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -251,6 +252,7 @@ DEPENDENCIES
   flickraw
   jquery-rails (= 2.1.4)
   loggr-rb
+  newrelic_rpm
   omniauth
   omniauth-twitter
   pg

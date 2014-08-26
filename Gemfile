@@ -79,7 +79,7 @@ end
 
 # end
 
-# gem 'newrelic_rpm'
+gem 'newrelic_rpm'
 
 # gem "awesome_print"
 
