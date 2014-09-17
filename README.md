@@ -429,3 +429,4 @@ ipad todo later
 - http://www.narizvi.com/blog/post/2011/05/26/Screenshots-for-iOS-App-Submission.aspx
 - http://maniacdev.com/2012/01/open-source-library-for-elegantly-styled-modal-panels-in-ios-apps/
 - http://www.raywenderlich.com/2797/introduction-to-in-app-purchases?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+RayWenderlich+%28Ray+Wenderlich+%7C+iPhone+Developer+and+Gamer%29
+
