@@ -26,6 +26,7 @@ gem 'tweetstream'
 group :development do
   gem 'sqlite3'
   gem "pry"
+  gem 'web-console', '~> 2.0'
 end
 
 
@@ -103,3 +104,4 @@ gem 'rails4_upgrade'
 
 gem 'figaro'
 
+gem 'responders', '~> 2.0'
