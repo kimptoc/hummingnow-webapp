@@ -26,7 +26,7 @@ gem 'tweetstream'
 group :development do
   gem 'sqlite3'
   gem "pry"
-  gem 'web-console', '~> 2.0'
+#  gem 'web-console', '~> 2.0'
 end
 
 
