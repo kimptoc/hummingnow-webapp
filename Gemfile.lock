@@ -69,7 +69,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.9.1.1)
     cookiejar (0.3.2)
     daemons (1.1.9)
     devise (3.5.1)
@@ -98,7 +98,7 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    execjs (2.0.0)
+    execjs (2.5.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     figaro (0.7.0)
@@ -274,7 +274,7 @@ DEPENDENCIES
   enumerated_attribute
   figaro
   flickraw
-  jquery-rails (= 2.1.4)
+  jquery-rails (~> 2)
   loggr-rb
   newrelic_rpm
   omniauth

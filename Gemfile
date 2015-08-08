@@ -48,7 +48,8 @@ gem 'rails-perftest', '~>0.0.2'
 
 
 # gem 'jquery-rails'
-gem 'jquery-rails', '=2.1.4'
+#gem 'jquery-rails', '=2.1.4'
+gem 'jquery-rails', '~>2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
