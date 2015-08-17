@@ -3,10 +3,10 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
     @settings = new Walloftweets.Collections.SettingsCollection(init_settings)
     @pending_tweets = new Walloftweets.Collections.TweetsCollection([],options)
     @tweets = new Walloftweets.Collections.TweetsCollection([],options)
-    options['model'] = @tweets
-    options['settings'] = @settings
-    @status = new Walloftweets.Views.TwitterStatusView(options)
+
+    @status = new Walloftweets.Views.TwitterStatusView(model: @tweets, settings: @settings)
     @controls = new Walloftweets.Views.TwitterControlsView(model: @pending_tweets, settings: @settings)
+
     @initial_held_back = options['initial_held_back']
     @held_back_factor = options['held_back_factor']
     @time_between_twitter_reload = options['time_between_twitter_reload']
@@ -15,13 +15,10 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
     @counter2 = 0
     @first_pass = true
     @timerEvent()
+    @tweets.fetch(reset: true)
 #    $('#setting-pack').on('click',@settingPackToggle)
-    auto_mode = @settings.get("auto_mode")
-    if auto_mode == null
-      @settings.set("auto_mode",true)
-    show_thumbnails = @settings.get("show_thumbnails")
-    if show_thumbnails == null
-      @settings.set("show_thumbnails",true)
+    @settings.add(id: "auto_mode", value: true)
+    @settings.add(id: "show_thumbnails", value: true)
     @update_view = new Walloftweets.Views.TwitterUpdateView
     KeyboardJS.bind.key('p', @controls.doPausePlayToggle)
     KeyboardJS.bind.key('g', @controls.doGridToggle)
@@ -30,13 +27,10 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
     KeyboardJS.bind.key('i', @showThumbnailsToggle)
     KeyboardJS.bind.key 'r', =>
       @counter = @time_between_twitter_reload + 1
-#      console?.log "r key pressed"
     $('#query-field').on "focusin", ->
       KeyboardJS.enabled(false)
-#      console?.log 'query got focus'
     $('#query-field').on "focusout", ->
       KeyboardJS.enabled(true)
-#      console?.log 'query lost focus'
 
   showThumbnailsToggle: =>
     @settings.toggle("show_thumbnails")
@@ -55,12 +49,12 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
     if @settings.is_true("auto_mode") or show_pending
       @counter2 += 1
       if @counter2 == @time_between_tweets_on_page or @first_pass or show_pending
-        @showSomeTweets() 
+        @showSomeTweets()
         $("a.oembed").oembed('',embedMethod: 'fill', includeHandle: false, tagClass: 'tweet_img', includeRichMedia: false, includeGeneric: false)
         # $("a.oembed").oembed('',embedMethod: 'fill', includeHandle: false, img_class: 'tweet_img', maxWidth: 20, maxHeight: 20)
         # $("a.oembed").oembed()
         $("a.oembed").removeClass('oembed')
-      @settings.set("show_pending",false) if show_pending
+      @settings.set(key:"show_pending", value: false) if show_pending
 #      console.log "added tweets",some_tweets
 #      console.log("displaying tweet #{a_tweet.get("id_str")}/#{- makeDate(a_tweet.get("created_at")).getTime()}")
 #    $("#update-timestamp").text("#{moment().format("HH:mm:ss")} - #{@counter} - #{@pending_tweets.length} - #{@tweets.length} - #{$('.tweet').size()}")
@@ -81,11 +75,11 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
 #        console.log a_tweet
         @pending_tweets.remove(a_tweet)
         some_tweets.push(a_tweet)
-#      @tweets.reset()
+        @tweets.reset()
         num_to_show -= 1
     @tweets.reset(some_tweets)
     @counter2 = 0
 
 
-    
+
 

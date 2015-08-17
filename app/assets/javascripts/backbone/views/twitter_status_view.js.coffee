@@ -3,19 +3,19 @@ class Walloftweets.Views.TwitterStatusView extends Backbone.View
   el: '#twitter-status'
 
   initialize: (options) ->
+    @options = options
     parentWidth = $(@el).width()
     numCols = parseInt(parentWidth / 200)
     @colWidth = $(@el).width() / numCols - 5
     $(@el).masonry( itemSelector: '.tweet', isAnimated: !Modernizr.csstransitions,
       isResizable: true, isFitWidth: true, columnWidth: @colWidth )
-    @model.bind('reset',@render)
-#    @model.bind('add',@render)
+    @model.bind('reset', @render)
+    # @model.on('reset',@render)
+    # @model.on('add',@render)
     $(@el).html("<br>Loading tweets...");
     @first_pass = true
-    pack_mode = options.settings.get("pack_mode")
-    if pack_mode == null
-      options.settings.set("pack_mode",false)
-    options.settings.bind_change('pack_mode',@renderPackMode)
+    @options.settings.set(id: "pack_mode", value: false)
+    @options.settings.bind_change('pack_mode',@renderPackMode)
     window.imagify_website_max = 15
     window.imagify_website_count = 1
 

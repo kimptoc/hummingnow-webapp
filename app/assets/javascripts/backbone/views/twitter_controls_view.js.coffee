@@ -11,14 +11,14 @@ class Walloftweets.Views.TwitterControlsView extends Backbone.View
   doShowPending: =>
 #    $('.ctl_pending').removeClass('notice')
 #    $('.ctl_pending').addClass('warning')
-    @options.settings.set("show_pending","true")
+    @options.settings.add(id: "show_pending", value: "true")
 
   doPack: ->
-    @options.settings.set("pack_mode","true")
+    @options.settings.add(id: "pack_mode", value: "true")
     @showHideControls()
 
   doGrid: ->
-    @options.settings.set("pack_mode","false")
+    @options.settings.add(id: "pack_mode", value: "false")
     @showHideControls()
 
   doGridToggle: =>
@@ -30,11 +30,11 @@ class Walloftweets.Views.TwitterControlsView extends Backbone.View
     @showHideControls()
 
   doPause: ->
-    @options.settings.set("auto_mode","false")
+    @options.settings.set(id: "auto_mode", value: "false")
     @showHideControls()
 
   doPlay: ->
-    @options.settings.set("auto_mode","true")
+    @options.settings.set(id: "auto_mode", value: "true")
     @showHideControls()
 
   showHideControls: ->
@@ -52,12 +52,12 @@ class Walloftweets.Views.TwitterControlsView extends Backbone.View
       $(".ctl_grid").hide()
 
   initialize: (options) ->
+    @options = options
     @model.bind('reset',@render)
     @model.bind('add',@render)
     @model.bind('remove',@render)
 
   render: =>
-#    console?.log "controls view render", @model
     $(@el).html(@template( models: @model.toJSON(), settings: @options.settings.toJSON()))
     @showHideControls()
 

@@ -11,4 +11,5 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/walloftweets
+//= require bootstrap
 //= require_tree .
