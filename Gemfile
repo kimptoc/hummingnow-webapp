@@ -3,12 +3,11 @@ source 'http://rubygems.org'
 
 ruby '2.1.2'
 
-gem 'rails', '~>4.1'
+gem 'rails', '~> 4.2.3'
 
-gem 'rails-backbone'
+gem 'rails-backbone', '~> 1.2.0'
 gem 'skeleton_rails'
 gem 'devise'
-#gem 'devise-twitter'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -18,15 +17,13 @@ gem 'tweetstream'
 
 
 #gem 'twitter_oauth'
-
-
+#gem 'devise-twitter'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'sqlite3'
   gem "pry"
-#  gem 'web-console', '~> 2.0'
 end
 
 
@@ -49,8 +46,7 @@ gem 'rails-perftest', '~>0.0.2'
 
 # gem 'jquery-rails'
 #gem 'jquery-rails', '=2.1.4'
-gem 'jquery-rails', '~>2'
-
+gem 'jquery-rails', '~> 4.0.4'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
