@@ -13,6 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.secret.yml
 
 # Ignore application configuration
 /config/application.yml
+/config/secret.yml
