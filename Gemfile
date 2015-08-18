@@ -1,9 +1,8 @@
 #source 'http://rubygems.dev'
 source 'http://rubygems.org'
 
-ruby '2.1.2'
 
-gem 'rails', '~>4.1'
+gem 'rails'
 
 gem 'rails-backbone'
 gem 'skeleton_rails'
@@ -32,24 +31,24 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails', '~>4'
-gem 'coffee-rails', '~>4'
-gem 'uglifier', '>=1.3.0'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
-gem 'actionpack-action_caching', '~>1'
-gem 'actionpack-page_caching', '~>1.0.0'
-gem 'actionpack-xml_parser', '~>1.0.0'
-gem 'actionview-encoded_mail_to', '~>1.0.4'
-gem 'activerecord-session_store', '~>0'
-gem 'activeresource', '~>4'
-gem 'protected_attributes', '~>1.0.1'
-gem 'rails-observers', '~>0.1.1'
-gem 'rails-perftest', '~>0.0.2'
+gem 'actionpack-action_caching'
+gem 'actionpack-page_caching'
+gem 'actionpack-xml_parser'
+gem 'actionview-encoded_mail_to'
+gem 'activerecord-session_store'
+gem 'activeresource'
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'rails-perftest'
 
 
 # gem 'jquery-rails'
 #gem 'jquery-rails', '=2.1.4'
-gem 'jquery-rails', '~>2'
+gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

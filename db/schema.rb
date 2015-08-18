@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20111124221755) do
 
-  create_table "authentications", force: true do |t|
+  create_table "authentications", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20111124221755) do
     t.datetime "updated_at"
   end
 
-  create_table "rails_admin_histories", force: true do |t|
+  create_table "rails_admin_histories", force: :cascade do |t|
     t.text     "message"
     t.string   "username"
     t.integer  "item"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20111124221755) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
 
-  create_table "user_settings", force: true do |t|
+  create_table "user_settings", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "key"
     t.string   "value"
@@ -47,9 +47,16 @@ ActiveRecord::Schema.define(version: 20111124221755) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "username"
+    t.string   "password"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
