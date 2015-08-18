@@ -276,7 +276,7 @@ DEPENDENCIES
   base58
   bitly
   coffee-rails (~> 4)
-  devise
+  devise (~> 3.5.2)
   enumerated_attribute
   figaro
   flickraw

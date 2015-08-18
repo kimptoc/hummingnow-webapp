@@ -7,7 +7,7 @@ gem 'rails', '~> 4.2.3'
 
 gem 'rails-backbone', '~> 1.2.0'
 gem 'skeleton_rails'
-gem 'devise'
+gem 'devise', '~> 3.5.2'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
