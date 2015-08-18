@@ -10,12 +10,15 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  def apply_omniauth(omniauth)
-    case omniauth['provider']
-    when 'twitter'
-      self.apply_twitter(omniauth)
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      #user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
     end
-    authentications.build(hash_from_omniauth(omniauth))
   end
 
   #def facebook

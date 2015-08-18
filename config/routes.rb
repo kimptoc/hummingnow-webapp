@@ -14,10 +14,12 @@ Walloftweets::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
-
-  get '/auth/:provider/callback' => 'authentications#create'
+  get '/auth/:provider/callback', to: 'session#create'
+  get '/auth/failure', to: redirect('/')
+  get '/signout', to: 'session#destroy', as: 'signout'
+  #get '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
-  get '/auth/failure' => 'authentications#index'
+  #get '/auth/failure' => 'authentications#index'
 
   search_chars = {:query => /[^\/]+/ }
 
