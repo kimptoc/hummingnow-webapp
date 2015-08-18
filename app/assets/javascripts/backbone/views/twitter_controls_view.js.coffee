@@ -11,14 +11,14 @@ class Walloftweets.Views.TwitterControlsView extends Backbone.View
   doShowPending: =>
 #    $('.ctl_pending').removeClass('notice')
 #    $('.ctl_pending').addClass('warning')
-    @options.settings.add(id: "show_pending", value: "true")
+    @options.settings.add({id: "show_pending", value: "true"}, {merge: true})
 
   doPack: ->
-    @options.settings.add(id: "pack_mode", value: "true")
+    @options.settings.add({id: "pack_mode", value: "true"}, {merge: true})
     @showHideControls()
 
   doGrid: ->
-    @options.settings.add(id: "pack_mode", value: "false")
+    @options.settings.add({id: "pack_mode", value: "false"}, {merge: true})
     @showHideControls()
 
   doGridToggle: =>
@@ -30,11 +30,11 @@ class Walloftweets.Views.TwitterControlsView extends Backbone.View
     @showHideControls()
 
   doPause: ->
-    @options.settings.set(id: "auto_mode", value: "false")
+    @options.settings.add({id: "auto_mode", value: "false"}, {merge: true})
     @showHideControls()
 
   doPlay: ->
-    @options.settings.set(id: "auto_mode", value: "true")
+    @options.settings.add({id: "auto_mode", value: "true"}, {merge: true})
     @showHideControls()
 
   showHideControls: ->

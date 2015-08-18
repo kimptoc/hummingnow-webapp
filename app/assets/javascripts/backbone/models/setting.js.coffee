@@ -13,11 +13,11 @@ class Walloftweets.Collections.SettingsCollection extends Backbone.Collection
 
   initialize: (nil, options) ->
 
-  get_settings: (key) ->
-    @settings = @filter((setting)-> setting.get("key") == key)
+  # get_settings: (key) ->
+  #   @settings = @filter((setting)-> setting.get("key") == key)
 
   bind_change: (key, callback) ->
-    settings = @get_settings(key)
+    settings = @where(id: key)
     if settings.length > 0
       settings[0].bind('change', callback)
 
@@ -32,13 +32,13 @@ class Walloftweets.Collections.SettingsCollection extends Backbone.Collection
   #     null
 
   is_true: (key) ->
-    val = @get(key)
-    return (val == "true") if val != null
+    setting = @get(key)
+    return (setting.get("value") == "true") if setting
     return false
 
   toggle: (key) ->
-    val = @is_true(key)
-    @set(key, @bool_string(!val))
+    setting = @get(key)
+    @add({id: key, value: @bool_string(!setting.get("val"))}, {merge: true})
 
   bool_string: (bool_val) ->
     if bool_val

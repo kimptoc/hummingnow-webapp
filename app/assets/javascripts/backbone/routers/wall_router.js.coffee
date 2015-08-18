@@ -17,8 +17,9 @@ class Walloftweets.Routers.WallRouter extends Backbone.Router
     @timerEvent()
     @tweets.fetch(reset: true)
 #    $('#setting-pack').on('click',@settingPackToggle)
-    @settings.add(id: "auto_mode", value: true)
-    @settings.add(id: "show_thumbnails", value: true)
+    @settings.add({id: "auto_mode", value: true}, {merge: true})
+    @settings.add({id: "show_thumbnails", value: true}, {merge:true})
+
     @update_view = new Walloftweets.Views.TwitterUpdateView
     KeyboardJS.bind.key('p', @controls.doPausePlayToggle)
     KeyboardJS.bind.key('g', @controls.doGridToggle)
